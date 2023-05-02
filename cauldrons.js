@@ -1019,7 +1019,7 @@ const data = {
 // 2- Mostrar la cantidad de cauldrons separados por temporada
 
     // cauldronsBySeason();
-// 3.- Mostrar los Cauldrons rotos separados por temporada
+// 3.- Mostrar el número de Cauldrons rotos separados por temporada
 
     // brokenCauldronsBySeason();
 
@@ -1038,9 +1038,10 @@ const data = {
     // plexiglassWinterPercentage()
 
 // 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
-    orangeGoodCauldrons()
+    // orangeGoodCauldrons()
 
 // 10.- Mostrar el listado de posibles colores de cauldrons, sin repetir color.
+    cauldronPossibleColors()
 
 
 
@@ -1327,3 +1328,54 @@ function orangeGoodCauldrons(){
     console.log("Total de calderos naranjas en buen estado: " + orangeCauldrons);
 }
 
+function cauldronPossibleColors(){
+
+    let possibleColors = [];
+
+    for(let i = 0; i < 4; i++){
+        let season;
+        switch (i){
+            case 0: 
+            season = data.cauldrons.summer_seasson;
+            break;
+
+            case 1: 
+            season = data.cauldrons.autumn_seasson;
+            break;
+
+            case 2: 
+            season = data.cauldrons.winter_seasson;
+            break;
+
+            case 3: 
+            season = data.cauldrons.spring_seasson;
+            break;
+            
+        }
+
+        for (let l = 0; l < season.length; l ++){
+
+            if(possibleColors.length === 0)
+                possibleColors.push(season[l].color);
+
+            else{
+                let colorCheck = 0;
+
+                for(let k = 0; k < possibleColors.length; k++){
+                    if(season[l].color === possibleColors[k])
+                        colorCheck++;
+                }
+
+                if(colorCheck === 0){
+                    possibleColors.push(season[l].color);
+                }
+            }
+        }
+    }
+
+    console.log("Los colores posibles son : ")
+    for(let i = 0; i < possibleColors.length; i++){
+        console.log(possibleColors[i]);
+    }
+    
+}
