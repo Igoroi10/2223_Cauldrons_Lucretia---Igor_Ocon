@@ -1014,31 +1014,31 @@ const data = {
 
 // 1.- Mostrar la cantidad total de cauldrons
 
-// totalCauldrons();
+    totalCauldrons();
 
 // 2- Mostrar la cantidad de cauldrons separados por temporada
 
-    // cauldronsBySeason();
+    cauldronsBySeason();
 // 3.- Mostrar el número de Cauldrons rotos separados por temporada
 
-    // brokenCauldronsBySeason();
+    brokenCauldronsBySeason();
 
 // 4.- Mostrar el color de los cauldron con magic_description "Naproxen"
-    // naproxenColor()
+    naproxenColor()
 
 // 5.- Mostrar el total de cauldrons de madera "wood" rotos, suma de todas las temporadas
-    // brokenWoodCauldronsQty()
+    brokenWoodCauldronsQty()
     
 // 6.- Mostrar la Id y magic_description de los cauldron llamados "Brassicaceae"
-    // brassicaceaeIDandDescription()
+    brassicaceaeIDandDescription()
     
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
-    // brokenCauldronsPercentageBySeason()
+    brokenCauldronsPercentageBySeason()
 // 8.- Mostrar el porcentaje de cauldrons de "Plexiglass" en "winter_seasson"
-    // plexiglassWinterPercentage()
+    plexiglassWinterPercentage()
 
 // 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
-    // orangeGoodCauldrons()
+    orangeGoodCauldrons()
 
 // 10.- Mostrar el listado de posibles colores de cauldrons, sin repetir color.
     cauldronPossibleColors()
@@ -1046,6 +1046,10 @@ const data = {
 
 
 function totalCauldrons(){
+
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 1--------------------")
+    console.log("---------------------------------------------")
 
     let summerCauldrons;
     let autumnCauldrons;
@@ -1063,6 +1067,9 @@ function totalCauldrons(){
 }
 
 function cauldronsBySeason(){
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 2--------------------")
+    console.log("---------------------------------------------")
 
     let summerCauldrons;
     let autumnCauldrons;
@@ -1083,56 +1090,52 @@ function cauldronsBySeason(){
 }
 
 function brokenCauldronsBySeason(){
-
-    let summerBrokenCauldrons;
-    let autumnBrokenCauldrons;
-    let winterBrokenCauldrons;
-    let springBrokenCauldrons;
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 3--------------------")
+    console.log("---------------------------------------------")
 
     for(let i = 0; i < 4; i++){
         let season;
-        let cauldron;
+        let cauldron = 0;
         let message; 
 
         switch (i){
             case 0: 
             season = data.cauldrons.summer_seasson;
-            cauldron = summerBrokenCauldrons;
             message = "calderos rotos en verano: "
             break;
 
             case 1: 
             season = data.cauldrons.autumn_seasson;
-            cauldron = autumnBrokenCauldrons;
             message = "calderos rotos en otoño: "
             break;
 
             case 2: 
             season = data.cauldrons.winter_seasson;
-            cauldron = winterBrokenCauldrons;
             message = "calderos rotos en invierno: "
             break;
 
             case 3: 
             season = data.cauldrons.spring_seasson;
-            cauldron = springBrokenCauldrons;
             message = "calderos rotos en primavera: "
             break;
             
         }
-        console.log("-----------------------------------------------------")
-        console.log(message)
-        console.log("-----------------------------------------------------")
+
         for (let l = 0; l < season.length; l ++){
             if(season[l].damaged === true){
-                console.log(season[l]);
+                cauldron++;
             }
         }
-
+        console.log (message + cauldron);
     }
 }
 
 function naproxenColor(){
+
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 4--------------------")
+    console.log("---------------------------------------------")
 
     for(let i = 0; i < 4; i++){
         let season;
@@ -1166,6 +1169,10 @@ function naproxenColor(){
 }
 
 function brokenWoodCauldronsQty(){
+
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 5--------------------")
+    console.log("---------------------------------------------")
 
     let totalBrokenWoodCauldrons = 0;
 
@@ -1202,6 +1209,10 @@ function brokenWoodCauldronsQty(){
 
 function brassicaceaeIDandDescription(){
 
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 6--------------------")
+    console.log("---------------------------------------------")
+
     for(let i = 0; i < 4; i++){
         let season;
         switch (i){
@@ -1236,6 +1247,10 @@ function brassicaceaeIDandDescription(){
 }
 
 function brokenCauldronsPercentageBySeason(){
+
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 7--------------------")
+    console.log("---------------------------------------------")
 
     for(let i = 0; i < 4; i++){
         let season;
@@ -1279,6 +1294,10 @@ function brokenCauldronsPercentageBySeason(){
 
 function plexiglassWinterPercentage(){
 
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 8--------------------")
+    console.log("---------------------------------------------")
+
     let count = 0;
     let season = data.cauldrons.winter_seasson;
 
@@ -1294,6 +1313,10 @@ function plexiglassWinterPercentage(){
 }
 
 function orangeGoodCauldrons(){
+
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 9--------------------")
+    console.log("---------------------------------------------")
 
     let orangeCauldrons = 0;
 
@@ -1329,6 +1352,9 @@ function orangeGoodCauldrons(){
 }
 
 function cauldronPossibleColors(){
+    console.log("---------------------------------------------")
+    console.log("--------------EJERCICIO 10-------------------")
+    console.log("---------------------------------------------")
 
     let possibleColors = [];
 
