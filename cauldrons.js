@@ -1028,10 +1028,12 @@ const data = {
 
 // 5.- Mostrar el total de cauldrons de madera "wood" rotos, suma de todas las temporadas
     // brokenWoodCauldronsQty()
+    
 // 6.- Mostrar la Id y magic_description de los cauldron llamados "Brassicaceae"
-    brassicaceaeIDandDescription()
+    // brassicaceaeIDandDescription()
+    
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
-
+    brokenCauldronsPercentageBySeason()
 // 8.- Mostrar el porcentaje de cauldrons de "Plexiglass" en "winter_seasson"
 
 // 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
@@ -1228,4 +1230,46 @@ function brassicaceaeIDandDescription(){
         }
     }
 
+}
+
+function brokenCauldronsPercentageBySeason(){
+
+    for(let i = 0; i < 4; i++){
+        let season;
+        let brokenCauldrons = 0;
+        let message; 
+
+        switch (i){
+            case 0: 
+            season = data.cauldrons.summer_seasson;
+            message = "Porcentaje de calderos rotos en verano: "
+            break;
+
+            case 1: 
+            season = data.cauldrons.autumn_seasson;
+            message = "Porcentaje de calderos rotos en otoño: "
+            break;
+
+            case 2: 
+            season = data.cauldrons.winter_seasson;
+            message = "Porcentaje de calderos rotos en invierno: "
+            break;
+
+            case 3: 
+            season = data.cauldrons.spring_seasson;
+            message = "Porcentaje de calderos rotos en primavera: "
+            break;
+            
+        }
+
+        for (let l = 0; l < season.length; l ++){
+            if(season[l].damaged === true){
+                brokenCauldrons++;
+            }
+        }
+
+        const percentageBySeason = (brokenCauldrons/season.length)*100;
+
+        console.log(message + percentageBySeason + "%.")
+    }
 }
