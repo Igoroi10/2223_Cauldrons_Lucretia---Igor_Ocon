@@ -1024,10 +1024,10 @@ const data = {
     // brokenCauldronsBySeason();
 
 // 4.- Mostrar el color de los cauldron con magic_description "Naproxen"
-    naproxenColor()
+    // naproxenColor()
 
 // 5.- Mostrar el total de cauldrons de madera "wood" rotos, suma de todas las temporadas
-
+    brokenWoodCauldronsQty()
 // 6.- Mostrar la Id y magic_description de los cauldron llamados "Brassicaceae"
 
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
@@ -1158,4 +1158,39 @@ function naproxenColor(){
             }
         }
     }
+}
+
+function brokenWoodCauldronsQty(){
+
+    let totalBrokenWoodCauldrons = 0;
+
+    for(let i = 0; i < 4; i++){
+        let season;
+        switch (i){
+            case 0: 
+            season = data.cauldrons.summer_seasson;
+            break;
+
+            case 1: 
+            season = data.cauldrons.autumn_seasson;
+            break;
+
+            case 2: 
+            season = data.cauldrons.winter_seasson;
+            break;
+
+            case 3: 
+            season = data.cauldrons.spring_seasson;
+            break;
+            
+        }
+
+        for (let l = 0; l < season.length; l ++){
+            if(season[l].type === "Wood" && season[l].damaged === true){
+                totalBrokenWoodCauldrons++;
+            }
+        }
+    }
+
+    console.log("Total de calderos rotos de madera: " + totalBrokenWoodCauldrons);
 }
