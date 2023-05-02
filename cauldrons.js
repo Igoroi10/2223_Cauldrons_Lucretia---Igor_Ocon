@@ -1033,8 +1033,9 @@ const data = {
     // brassicaceaeIDandDescription()
     
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
-    brokenCauldronsPercentageBySeason()
+    // brokenCauldronsPercentageBySeason()
 // 8.- Mostrar el porcentaje de cauldrons de "Plexiglass" en "winter_seasson"
+    plexiglassWinterPercentage()
 
 // 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
 
@@ -1272,4 +1273,20 @@ function brokenCauldronsPercentageBySeason(){
 
         console.log(message + percentageBySeason + "%.")
     }
+}
+
+function plexiglassWinterPercentage(){
+
+    let count = 0;
+    let season = data.cauldrons.winter_seasson;
+
+    for (let i = 0; i < season.length; i++){
+        if(season[i].type === "Plexiglass")
+            count++
+    }
+
+    const plexiglassPercentage = (count/season.length)*100;
+
+    console.log("El porcentaje de plexiglass de los calderos en invierno es del " + plexiglassPercentage + "%.");
+
 }
