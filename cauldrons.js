@@ -1035,9 +1035,10 @@ const data = {
 // 7.- Mostrar el porcentaje de cauldrons dañados separados por temporada
     // brokenCauldronsPercentageBySeason()
 // 8.- Mostrar el porcentaje de cauldrons de "Plexiglass" en "winter_seasson"
-    plexiglassWinterPercentage()
+    // plexiglassWinterPercentage()
 
 // 9.- Mostrar el número de cauldrons de color "Orange" en buen estado
+    orangeGoodCauldrons()
 
 // 10.- Mostrar el listado de posibles colores de cauldrons, sin repetir color.
 
@@ -1290,3 +1291,39 @@ function plexiglassWinterPercentage(){
     console.log("El porcentaje de plexiglass de los calderos en invierno es del " + plexiglassPercentage + "%.");
 
 }
+
+function orangeGoodCauldrons(){
+
+    let orangeCauldrons = 0;
+
+    for(let i = 0; i < 4; i++){
+        let season;
+        switch (i){
+            case 0: 
+            season = data.cauldrons.summer_seasson;
+            break;
+
+            case 1: 
+            season = data.cauldrons.autumn_seasson;
+            break;
+
+            case 2: 
+            season = data.cauldrons.winter_seasson;
+            break;
+
+            case 3: 
+            season = data.cauldrons.spring_seasson;
+            break;
+            
+        }
+
+        for (let l = 0; l < season.length; l ++){
+            if(season[l].color === "Orange" && season[l].damaged === false){
+                orangeCauldrons++;
+            }
+        }
+    }
+
+    console.log("Total de calderos naranjas en buen estado: " + orangeCauldrons);
+}
+
