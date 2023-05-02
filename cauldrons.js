@@ -1021,9 +1021,10 @@ const data = {
     // cauldronsBySeason();
 // 3.- Mostrar los Cauldrons rotos separados por temporada
 
-    brokenCauldronsBySeason();
+    // brokenCauldronsBySeason();
 
 // 4.- Mostrar el color de los cauldron con magic_description "Naproxen"
+    naproxenColor()
 
 // 5.- Mostrar el total de cauldrons de madera "wood" rotos, suma de todas las temporadas
 
@@ -1124,6 +1125,37 @@ function brokenCauldronsBySeason(){
         }
 
     }
+}
+
+function naproxenColor(){
+
+    for(let i = 0; i < 4; i++){
+        let season;
 
 
+        switch (i){
+            case 0: 
+            season = data.cauldrons.summer_seasson;
+            break;
+
+            case 1: 
+            season = data.cauldrons.autumn_seasson;
+            break;
+
+            case 2: 
+            season = data.cauldrons.winter_seasson;
+            break;
+
+            case 3: 
+            season = data.cauldrons.spring_seasson;
+            break;
+            
+        }
+
+        for (let l = 0; l < season.length; l ++){
+            if(season[l].magic_description === "Naproxen"){
+                console.log("Color de cauldron con descripción de Naproxen: " + season[l].color);
+            }
+        }
+    }
 }
