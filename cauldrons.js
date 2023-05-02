@@ -1018,8 +1018,10 @@ const data = {
 
 // 2- Mostrar la cantidad de cauldrons separados por temporada
 
-    cauldronsBySeason();
+    // cauldronsBySeason();
 // 3.- Mostrar los Cauldrons rotos separados por temporada
+
+    brokenCauldronsBySeason();
 
 // 4.- Mostrar el color de los cauldron con magic_description "Naproxen"
 
@@ -1070,6 +1072,58 @@ function cauldronsBySeason(){
     console.log("Cantidad de calderos generados en otoño: " + autumnCauldrons);
     console.log("Cantidad de calderos generados en primavera: " + winterCauldrons);
     console.log("Cantidad de calderos generados en invierno: " + springCauldrons);
+
+
+}
+
+function brokenCauldronsBySeason(){
+
+    let summerBrokenCauldrons;
+    let autumnBrokenCauldrons;
+    let winterBrokenCauldrons;
+    let springBrokenCauldrons;
+
+    for(let i = 0; i < 4; i++){
+        let season;
+        let cauldron;
+        let message; 
+
+        switch (i){
+            case 0: 
+            season = data.cauldrons.summer_seasson;
+            cauldron = summerBrokenCauldrons;
+            message = "calderos rotos en verano: "
+            break;
+
+            case 1: 
+            season = data.cauldrons.autumn_seasson;
+            cauldron = autumnBrokenCauldrons;
+            message = "calderos rotos en otoño: "
+            break;
+
+            case 2: 
+            season = data.cauldrons.winter_seasson;
+            cauldron = winterBrokenCauldrons;
+            message = "calderos rotos en invierno: "
+            break;
+
+            case 3: 
+            season = data.cauldrons.spring_seasson;
+            cauldron = springBrokenCauldrons;
+            message = "calderos rotos en primavera: "
+            break;
+            
+        }
+        console.log("-----------------------------------------------------")
+        console.log(message)
+        console.log("-----------------------------------------------------")
+        for (let l = 0; l < season.length; l ++){
+            if(season[l].damaged === true){
+                console.log(season[l]);
+            }
+        }
+
+    }
 
 
 }
